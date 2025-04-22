@@ -110,7 +110,7 @@
       margin-bottom: 30px;
     }
     #gameCanvas {
-      background: #333;
+      background: #BDD6E6; /* Updated grid background */
       display: block;
       margin-bottom: 10px;
       border-radius: 0;
@@ -186,12 +186,20 @@
     const initialSnakeLength = 3;
     const gameSpeed = 100; // ms per frame
 
+    // --- Colors ---
+    const gridBgColor = '#BDD6E6';
+    const gridLineColor = '#FFFFFF';
+    const snakeBodyColor = '#002E5D';
+    const snakeHeadColor = '#00152a';
+    const appleColor = '#9E2A2B';
+    const gameOverBanner = '#0072CE';
+
     // --- Game State ---
     let snake, direction, nextDirection, food, score, intervalId, gameOver, gameStarted = false;
 
     function drawGrid() {
       ctx.save();
-      ctx.strokeStyle = 'rgba(179,199,230,0.4)'; // Light blue grid
+      ctx.strokeStyle = gridLineColor;
       ctx.lineWidth = 1;
       for (let i = 1; i < gridSize; i++) {
         // Vertical lines
@@ -209,10 +217,10 @@
     }
 
     function drawInitialScreen() {
-      ctx.fillStyle = '#333';
+      ctx.fillStyle = gridBgColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       drawGrid();
-      ctx.fillStyle = '#fff';
+      ctx.fillStyle = snakeBodyColor;
       ctx.font = '28px Arial';
       ctx.textAlign = 'center';
       ctx.fillText('Press Start to Play', canvas.width / 2, canvas.height / 2);
@@ -293,21 +301,21 @@
 
     function draw() {
       // Clear canvas
-      ctx.fillStyle = '#333';
+      ctx.fillStyle = gridBgColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Draw light blue background grid
+      // Draw white grid lines
       drawGrid();
 
-      // Draw food
-      ctx.fillStyle = '#e74c3c';
+      // Draw apple
+      ctx.fillStyle = appleColor;
       ctx.fillRect(food.x * tileSize, food.y * tileSize, tileSize, tileSize);
 
       // Draw snake
       for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = i === 0 ? '#f1c40f' : '#2ecc40';
+        ctx.fillStyle = i === 0 ? snakeHeadColor : snakeBodyColor;
         ctx.fillRect(snake[i].x * tileSize, snake[i].y * tileSize, tileSize, tileSize);
-        ctx.strokeStyle = '#222';
+        ctx.strokeStyle = gridBgColor;
         ctx.strokeRect(snake[i].x * tileSize, snake[i].y * tileSize, tileSize, tileSize);
       }
     }
@@ -315,7 +323,8 @@
     function endGame() {
       clearInterval(intervalId);
       gameOver = true;
-      ctx.fillStyle = 'rgba(0,0,0,0.7)';
+      // Game over banner
+      ctx.fillStyle = gameOverBanner;
       ctx.fillRect(0, canvas.height / 2 - 40, canvas.width, 80);
       ctx.fillStyle = '#fff';
       ctx.font = '32px Arial';
