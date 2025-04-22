@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/scratch.css">
+</head>
+<body>
+    <!-- Page Header-->
+    <div class="structured header">
+        <h1>Elephants</h1>
+    </div>
+
+    <!-- Navigation-->
+    <nav>
+        <a href="index.html">Resume Page</a>
+        <a href="#">Elephants</a>
+        <a href="webapp.html">Snake Game</a>
+    </nav>
+
+
+    <!-- Main Content-->
+    <div class="structured mainbody">
+        
+        <!-- On-Page Anchors -->
+        <div class="insert" id="top">
+            <h2>On this Page:</h2>
+            <ol>
+                <li><a href="#lists">Fun Facts</a></li>
+                <li><a href="#images">Pictures</a></li>
+                <li><a href="#youtube">YouTube Video</a></li>
+                <li><a href="#tableau">Tableau Population Map</a></li>
+            </ol>
+        </div>
+
+        <!-- Embedded List -->
+        <div class="insert" id="lists">
+            <h2>Did you know?</h2>
+            <ol class="bold">
+                <li>Elephants are very social:
+                    <ul class="normal">
+                        <li>Elephants live in family units called herds.</li>
+                        <li>Herds are led by a matriarch, the oldest and most experienced female.</li>
+                        <li>Elephant families often help each other raise young calves.</li>
+                    </ul>
+                    <br>
+                </li>
+                <li>Elephants are the world's largest land animal:
+                    <ul class="normal">
+                        <li>They can eat up to 300 pounds of food per day.</li>
+                        <li>They are one of the only mammals that cannot jump.</li>
+                    </ul>
+                    <br>
+                </li>
+                <li>An elephant never forgets:
+                    <ul class="normal">
+                        <li>Elephants have an excellent memory.</li>
+                        <li>They communicate through vibrations.</li>
+                        <li>They are one of the few animals that can recognize themselves in a mirror.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Images -->
+        <div id="images">
+            <h3>Elephant Pictures!</h3>
+            <img src="assets/img/elephant.jpg" alt="Elephant" width="200">
+            <br>
+            <img src="assets/img/elephant_baby.jpeg" alt="Elephant Mom w/ Baby" width="200">
+            <br>
+            <img src="assets/img/elephant_herd.jpg" alt="Elephant Herd" width="200">
+        </div>
+        
+        <!-- Embedded YouTube Video -->
+        <div id="youtube">
+            <h3>BBC Earth: Elephants Being Elephants</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FwOoC0QdeG4?si=btQmola-sxuWTp3R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Tableau Graph -->
+        <div class="insert" id="tableau">
+            <h2>Tableau Population Map</h2>
+            <div class='tableauPlaceholder' id='viz1745314554288' style='position: relative'>
+                <noscript>
+                    <a href='#'><img alt='Map of Elephant Population ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6R&#47;6RYNSD6RB&#47;1_rss.png' style='border: none' /></a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;6RYNSD6RB' /> 
+                    <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;6R&#47;6RYNSD6RB&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' /><param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>                
+            <script type='text/javascript'>                    
+                var divElement = document.getElementById('viz1745314554288');                    
+                var vizElement = divElement.getElementsByTagName('object')[0];                    
+                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+                var scriptElement = document.createElement('script');                    
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+            </script>
+        </div>
+    </div>
+    <!-- <div class="structured footer">Footer</div> -->
+</body>
+</html>
